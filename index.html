@@ -1,0 +1,64 @@
+                <!doctype html>
+                <html lang="en">
+                <head>
+                  <meta charset="utf-8" />
+                  <title>OFinanceGPT — Welcome</title>
+                  <meta name="viewport" content="width=device-width,initial-scale=1" />
+                  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+                </head>
+                <body class="bg">
+                  <div class="center-wrap">
+                    <div class="card neon">
+                      <div class="logo">OFinanceGPT</div>
+                      <div class="tagline" id="tagline"></div>
+
+                      <div class="cta-row">
+                        <button id="startBtn" class="btn primary">🚀 Start Chatting</button>
+                        <button id="insightBtn" class="btn ghost">📊 Explore Insights</button>
+                        <button id="aboutBtn" class="btn ghost">🧠 About Model</button>
+                      </div>
+
+                      <div class="welcome-cards">
+                        <div class="mini-card">
+                          <div class="title">Fast answers</div>
+                          <div class="desc">Finance Q&A in plain English</div>
+                        </div>
+                        <div class="mini-card">
+                          <div class="title">Context aware</div>
+                          <div class="desc">Maintain session context</div>
+                        </div>
+                        <div class="mini-card">
+                          <div class="title">Secure</div>
+                          <div class="desc">Runs locally - your data stays private</div>
+                        </div>
+                      </div>
+
+                      <div class="foot">⚡ Built with LLaMA · Local GGUF</div>
+                    </div>
+                  </div>
+
+                <script>
+                  // Typewriter taglines
+                  const tagEl = document.getElementById('tagline');
+                  const text = "Your AI partner for smarter financial insights 💸";
+                  let i = 0;
+                  function type() {
+                    if (i <= text.length) {
+                      tagEl.innerText = text.slice(0,i++);
+                      setTimeout(type, 45);
+                    }
+                  }
+                  type();
+
+                  document.getElementById('startBtn').onclick = () => {
+                    window.location.href = '/chat';
+                  };
+                  document.getElementById('insightBtn').onclick = () => {
+                    alert('Explore Insights coming soon — for now Start Chatting!');
+                  };
+                  document.getElementById('aboutBtn').onclick = () => {
+                    alert('OFinanceGPT: finetuned LLaMA GGUF for finance Q&A. Runs locally on your machine.');
+                  };
+                </script>
+                </body>
+                </html>

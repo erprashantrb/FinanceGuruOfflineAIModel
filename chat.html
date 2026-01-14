@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PrashFinanceGPT — Chat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg">
+  <div class="app-wrap">
+    <aside class="sidebar neon-card">
+      <div class="logo-small">OFinanceGPT</div>
+      <div class="sidebar-note">AI for finance - local & private</div>
+
+      <div class="upload-block">
+        <label class="file-label">
+          <input id="modelInput" type="file" accept=".gguf">
+          <span>Upload GGUF</span>
+        </label>
+        <div id="progressWrap" class="progress-wrap" style="display:none">
+          <div class="progress-bar"><div id="progressFill"></div></div>
+          <div id="progressText" class="progress-text"></div>
+        </div>
+        <div id="statusMsg" class="status-msg">No model loaded</div>
+      </div>
+
+      <div class="sidebar-actions">
+        <button id="clearBtn" class="btn small ghost">Clear Chat</button>
+        <button id="reloadBtn" class="btn small">Reload Model</button>
+      </div>
+
+      <div class="powered">⚡ LLaMA · Local</div>
+    </aside>
+
+    <main class="main-col neon-card">
+      <div id="welcomePanel" class="welcome-panel">
+        <h2>Welcome to OFinanceGPT</h2>
+        <p>Ask anything: investing, budgeting, taxes, stock basics - or test the model.</p>
+      </div>
+
+      <div id="chatArea" class="chat-area" style="display:none">
+        <div id="messages" class="messages"></div>
+
+        <div class="input-row">
+          <input id="userMsg" placeholder="Type your message..." autocomplete="off">
+          <button id="sendBtn" class="send-btn">➤</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
